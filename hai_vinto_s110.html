@@ -1,0 +1,53 @@
+<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/hai_vinto.png");
+        background-size:cover;
+      }
+
+      #freccia {
+        width:60px;
+        height:36px;
+        background-image:url("assets/freccia.png");
+        position:absolute;
+        top:650px;
+        left:1180px;
+      }
+
+      @keyframes dissolvenza {
+        from {opacity:0;}
+        to{opacity:1;}
+      }
+
+      .dissolvenza {
+        animation: dissolvenza 1s linear;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="freccia"></div>
+      </div>
+
+      <script>
+      $("#sfondo").addClass("dissolvenza")
+
+      $("#freccia").click(function() {
+        window.location.href="s120.html"
+      })
+      </script>
+    </body>
+</html>

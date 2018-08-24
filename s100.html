@@ -1,0 +1,160 @@
+﻿<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <script src="assets/jquery-ui.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/s100/s100.png");
+        background-size:cover;
+      }
+
+      #morte {
+        width:310px;
+        height:381px;
+        background-image:url("assets/s100/morte.png");
+        background-size:cover;
+        position:absolute;
+        top:280px;
+        left:510px;
+      }
+
+      #contatore {
+        position:absolute;
+        top:80px;
+        left:1150px;
+        color:white;
+        border: 3px dotted white;
+        font-family: "Arsenal", sans-serif;
+        font-size:55px;
+        width: 80px;
+        height: 100px;
+        text-align: center;
+        line-height: 177%;
+        background-color: black;
+        }
+
+      #pergamena {
+        width:353px;
+        height:550px;
+        background-image:url("assets/pergamena_giochi.png");
+        background-size:cover;
+        position:absolute;
+        top:15%;
+        left:50%;
+        transform:translate(-50%);
+      }
+
+      @font-face {
+        font-family: "Arsenal";
+        src: url(assets/fonts/Arsenal-Regular.ttf);
+      }
+
+      @font-face {
+        font-family: "Cinzel";
+        src: url(assets/fonts/Cinzel-Regular.ttf);
+      }
+
+      #testo_gioco {
+        width:75%;
+        height:70%;
+        position:absolute;
+        top:10%;
+        left:13%;
+        font-family: "Arsenal", sans-serif;
+      }
+
+      #pulsante {
+        position:absolute;
+        top:55%;
+        left:27%;
+        font-size: 50px;
+        font-family: "Cinzel", serif;
+        cursor: pointer;
+        color: #663300;
+        }
+
+      #copertina {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:80%;
+        left:13%;
+      }
+
+      .sfocato {
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -o-filter: blur(2px);
+        -ms-filter: blur(2px);
+        pointer-events:none;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="morte"></div>
+        <div id="contatore">10</div>
+      </div>
+      <div id="pergamena">
+        <div id="testo_gioco">
+          <p>La figura incappucciata, rivolgendosi a loro, chiese:
+              “Credete davvero di possedere questa virtù?”<br>
+              I tre fratelli decisero, dunque, di dimostrare il proprio coraggio, affrontando la prova più grande che l'uomo possa intraprendere: combattere la Morte.</p>
+        </div>
+        <div id="pulsante">inizia</div>
+        <a href="index.html">
+          <img id="copertina" src="assets/copertina.png"/>
+        </a>
+      </div>
+
+      <script>
+      var x = 0;
+      var y = 0;
+      var z = 10;
+
+      function sposta_morte() {
+        x = Math.random()*990;
+        y = Math.random()*369;
+
+        $("#morte").animate({
+          top:y, left:x}, 500)
+        setTimeout(sposta_morte, 500);
+      }
+
+      function timer() {
+        z = z - 1;
+        if(z > -1) {
+          $("#contatore").text(z);
+        }
+        if(z == 0) {
+          window.location.href="hai_perso.html"
+        }
+        setTimeout (timer, 1000)
+      }
+
+      $("#sfondo").addClass("sfocato")
+
+      $("#pulsante").click(function() {
+        sposta_morte()
+        timer()
+        $("#pergamena").fadeOut()
+        $("#sfondo").removeClass("sfocato")
+      })
+
+      $("#morte").click(function() {
+        window.location.href="hai_vinto.html"
+      })
+      </script>
+    </body>
+</html>

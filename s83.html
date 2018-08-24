@@ -1,0 +1,200 @@
+<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/s83/s83.png");
+        background-size:cover;
+      }
+
+      #pergamena {
+        width:20%;
+        height:55%;
+        position:absolute;
+        top:2.5%;
+        left:2%;
+        background-image:url("assets/pergamena.png");
+        background-size:cover;
+      }
+
+      #chiodo {
+        width:48px;
+        height:auto;
+        position:absolute;
+        top:4%;
+        left:38%;
+      }
+
+      @font-face {
+        font-family: "Arsenal";
+        src: url(assets/fonts/Arsenal-Regular.ttf);
+      }
+
+      #testo {
+        width:80%;
+        height:70%;
+        position:absolute;
+        top:15%;
+        left:50%;
+        transform:translate(-50%);
+        font-family: "Arsenal", sans-serif;
+      }
+
+      #indovinello {
+        text-align:center;
+        font-style:italic;
+      }
+
+      #copertina {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:80%;
+        left:11%;
+      }
+
+      @font-face {
+        font-family: "Cinzel";
+        src: url(assets/fonts/Cinzel-Regular.ttf);
+      }
+
+      .qualità {
+        font-family: "Cinzel", serif;
+        font-size:30px;
+        color:black;
+      }
+
+      #intelligenza {
+        width:500px;
+        height:195px;
+        background-image:url("assets/s80/nebbia.png");
+        background-size:cover;
+        position:absolute;
+        top:30px;
+        left:230px;
+      }
+
+      #coraggio {
+        width:500px;
+        height:195px;
+        background-image:url("assets/s80/nebbia.png");
+        background-size:cover;
+        position:absolute;
+        top:180px;
+        left:500px;
+      }
+
+      #umiltà {
+        width:415px;
+        height:195px;
+        background-image:url("assets/s80/nebbia2.png");
+        background-size:cover;
+        position:absolute;
+        top:20px;
+        left:820px;
+      }
+
+      #parola1 {
+        position:absolute;
+        top:99px;
+        left:170px;
+      }
+
+      #parola2 {
+        position:absolute;
+        top:100px;
+        left:190px;
+      }
+
+      #parola3 {
+        position:absolute;
+        top:85px;
+        left:186px;
+      }
+
+      @keyframes fluttua1 {
+        from {transform: translateY(-5px);}
+        to {transform: translateY(5px);}
+      }
+
+      .fluttuante1 {
+        animation: fluttua1 2s infinite linear alternate;
+      }
+
+      @keyframes fluttua2 {
+        from {transform: translateY(2px);}
+        to {transform: translateY(-8px);}
+      }
+
+      .fluttuante2 {
+        animation: fluttua2 2s infinite linear alternate;
+      }
+
+      @keyframes fluttua3 {
+        from {transform: translateY(-3px);}
+        to {transform: translateY(7px);}
+      }
+
+      .fluttuante3 {
+        animation: fluttua3 2s infinite linear alternate;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="intelligenza">
+          <div id="parola1" class="qualità">INTELLIGENZA</div>
+        </div>
+        <div id="coraggio">
+          <div id="parola2" class="qualità">CORAGGIO</div>
+        </div>
+        <div id="umiltà">
+          <div id="parola3" class="qualità">UMILTÀ</div>
+        </div>
+        <div id="pergamena">
+          <img id="chiodo" src="assets/chiodo.png"/>
+          <div id="testo">
+            <p>Questa disse loro:</p>
+            <p id="indovinello">
+              “Se questo fiume<br/> volete attraversare<br/>
+              un’unica risposta<br/> dovrete dare<br/>
+              <b>intelligenza</b>, <b>coraggio</b>, <b>umiltà</b><br/>
+              qual è la più nobile<br/> delle qualità?”<br/>
+            </p>
+          </div>
+          <a href="index.html">
+            <img id="copertina" src="assets/copertina.png"/>
+          </a>
+        </div>
+      </div>
+
+      <script>
+      $("#intelligenza").addClass("fluttuante1")
+      $("#coraggio").addClass("fluttuante2")
+      $("#umiltà").addClass("fluttuante3")
+
+      $("#parola1").click(function() {
+        window.location.href="s81.html"
+      })
+
+      $("#parola2").click(function() {
+        window.location.href="s100.html"
+      })
+
+      $("#parola3").click(function() {
+        window.location.href="s110.html"
+      })
+      </script>
+    </body>
+</html>

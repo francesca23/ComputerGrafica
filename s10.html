@@ -1,0 +1,189 @@
+﻿<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/s10/s10.png");
+        background-size:cover;
+      }
+
+      #pergamena {
+        width:20%;
+        height:55%;
+        position:absolute;
+        top:2.5%;
+        left:2%;
+        background-image:url("assets/pergamena.png");
+        background-size:cover;
+      }
+
+      #chiodo {
+        width:48px;
+        height:auto;
+        position:absolute;
+        top:4%;
+        left:38%;
+      }
+
+      @font-face {
+        font-family: "Arsenal";
+        src: url(assets/fonts/Arsenal-Regular.ttf);
+      }
+
+      #testo {
+        width:80%;
+        height:70%;
+        position:absolute;
+        top:15%;
+        left:50%;
+        transform:translate(-50%);
+        font-family: "Arsenal", sans-serif;
+      }
+
+      #copertina {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:80%;
+        left:11%;
+      }
+
+      #freccia_sx {
+        background-image:url("assets/s10/freccia_sx.png");
+        background-size: cover;
+        position:absolute;
+        width: 132px;
+        height: 65px;
+        top: 276px;
+        left: 348px;
+      }
+
+      #aura_freccia_sx {
+        display: none;
+        background-image: url("assets/s10/aura_freccia_sx.png");
+        background-size: cover;
+        position:absolute;
+        width: 142px;
+        height: 80px;
+        top: 266px;
+        left: 343px;
+      }
+
+      #freccia_centro {
+        background-image: url("assets/s10/freccia_centro.png");
+        background-size: cover;
+        position:absolute;
+        width: 52px;
+        height: 88px;
+        top: 378px;
+        left: 818px;
+      }
+
+      #aura_freccia_centro {
+        display: none;
+        background-image: url("assets/s10/aura_freccia_centro.png");
+        background-size: cover;
+        position:absolute;
+        width: 67px;
+        height: 97px;
+        top: 373px;
+        left: 813px;
+      }
+
+      #freccia_dx {
+        background-image: url("assets/s10/freccia_dx.png");
+        background-size: cover;
+        position:absolute;
+        width: 120px;
+        height: 57px;
+        top: 253px;
+        left: 953px;
+      }
+
+      #aura_freccia_dx {
+        display: none;
+        background-image: url("assets/s10/aura_freccia_dx.png");
+        background-size: cover;
+        position:absolute;
+        width: 137px;
+        height: 73px;
+        top: 245px;
+        left: 945px;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="pergamena">
+          <img id="chiodo" src="assets/chiodo.png"/>
+          <div id="testo">
+            <p>C'erano una volta tre fratelli che viaggiavano lungo una strada al calar del sole.
+              Dopo qualche tempo, giunsero a un fiume che impediva loro il passaggio; la corrente non sembrava particolarmente forte.
+              I fratelli dovettero decidere se <b>svoltare a sinistra</b>, <b>proseguire dritti</b> o <b>svoltare a destra</b>.</p>
+          </div>
+          <a href="index.html">
+            <img id="copertina" src="assets/copertina.png"/>
+          </a>
+        </div>
+        <div id="freccia_sx"></div>
+        <div id="aura_freccia_sx"></div>
+        <div id="freccia_centro"></div>
+        <div id="aura_freccia_centro"></div>
+        <div id="freccia_dx"></div>
+        <div id="aura_freccia_dx"></div>
+      </div>
+
+      <script>
+      $("#freccia_sx").mouseenter(function() {
+        $("#freccia_sx").fadeOut()
+        $("#aura_freccia_sx").fadeIn()
+      })
+
+      $("#aura_freccia_sx").mouseleave(function() {
+        $("#aura_freccia_sx").fadeOut()
+        $("#freccia_sx").fadeIn()
+      })
+
+      $("#freccia_centro").mouseenter(function() {
+        $("#freccia_centro").fadeOut()
+        $("#aura_freccia_centro").fadeIn()
+      })
+
+      $("#aura_freccia_centro").mouseleave(function() {
+        $("#aura_freccia_centro").fadeOut()
+        $("#freccia_centro").fadeIn()
+      })
+
+      $("#freccia_dx").mouseenter(function() {
+        $("#freccia_dx").fadeOut()
+        $("#aura_freccia_dx").fadeIn()
+      })
+
+      $("#aura_freccia_dx").mouseleave(function() {
+        $("#aura_freccia_dx").fadeOut()
+        $("#freccia_dx").fadeIn()
+      })
+
+      $("#aura_freccia_sx").click(function() {
+        window.location.href = "s20.html"
+      })
+      $("#aura_freccia_centro").click(function() {
+        window.location.href = "s40.html"
+      })
+      $("#aura_freccia_dx").click(function() {
+        window.location.href = "s30.html"
+      })
+      </script>
+    </body>
+</html>

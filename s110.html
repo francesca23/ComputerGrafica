@@ -1,0 +1,407 @@
+﻿<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <script src="assets/jquery-ui.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/s110/s110.png");
+        background-size:cover;
+      }
+
+      #cesta_retro {
+        width:1300px;
+        height:750px;
+        background-image:url("assets/s110/cesta_retro.png");
+        position:absolute;
+        top:0px;
+        left:0px;
+        pointer-events:none;
+      }
+
+      #talismano {
+        width:32px;
+        height:80px;
+        background-image:url("assets/s110/talismano.png");
+        position:absolute;
+        top:167px;
+        left:154px;
+      }
+
+      #aura_talismano {
+        width:44px;
+        height:90px;
+        background-image:url("assets/s110/aura_talismano.png");
+        position:absolute;
+        top:161px;
+        left:148px;
+        display:none;
+      }
+
+      #alberi_talismano {
+        width:1300px;
+        height:750px;
+        background-image:url("assets/s110/alberi_talismano.png");
+        position:absolute;
+        top:0px;
+        left:0px;
+        pointer-events:none;
+      }
+
+      #libro {
+        width:61px;
+        height:64px;
+        background-image:url("assets/s110/libro.png");
+        position:absolute;
+        top:368px;
+        left:551px;
+      }
+
+      #aura_libro {
+        width:75px;
+        height:73px;
+        background-image:url("assets/s110/aura_libro.png");
+        position:absolute;
+        top:362px;
+        left:545px;
+        display:none;
+      }
+
+      #alberi_libro {
+        width:1300px;
+        height:750px;
+        background-image:url("assets/s110/alberi_libro.png");
+        position:absolute;
+        top:0px;
+        left:0px;
+        pointer-events:none;
+      }
+
+      #specchio {
+        width:54px;
+        height:131px;
+        background-image:url("assets/s110/specchio.png");
+        position:absolute;
+        top:65px;
+        left:796px;
+      }
+
+      #aura_specchio {
+        width:67px;
+        height:137px;
+        background-image:url("assets/s110/aura_specchio.png");
+        position:absolute;
+        top:63px;
+        left:790px;
+        display:none;
+      }
+
+      #alberi_specchio {
+        width:1300px;
+        height:750px;
+        background-image:url("assets/s110/alberi_specchio.png");
+        position:absolute;
+        top:0px;
+        left:0px;
+        pointer-events:none;
+      }
+
+      #cappello {
+        width:93px;
+        height:70px;
+        background-image:url("assets/s110/cappello.png");
+        position:absolute;
+        top:369px;
+        left:1132px;
+      }
+
+      #aura_cappello {
+        width:103px;
+        height:81px;
+        background-image:url("assets/s110/aura_cappello.png");
+        position:absolute;
+        top:362px;
+        left:1127px;
+        display:none;
+      }
+
+      #alberi_cappello {
+        width:1300px;
+        height:750px;
+        background-image:url("assets/s110/alberi_cappello.png");
+        position:absolute;
+        top:0px;
+        left:0px;
+        pointer-events:none;
+      }
+
+      #chiave {
+        width:55px;
+        height:38px;
+        background-image:url("assets/s110/chiave.png");
+        position:absolute;
+        top:472px;
+        left:250px;
+      }
+
+      #aura_chiave {
+        width:66px;
+        height:46px;
+        background-image:url("assets/s110/aura_chiave.png");
+        position:absolute;
+        top:467px;
+        left:245px;
+        display:none;
+      }
+
+      #sassi_chiave {
+        width:1300px;
+        height:750px;
+        background-image:url("assets/s110/sassi_chiave.png");
+        position:absolute;
+        top:0px;
+        left:0px;
+        pointer-events:none;
+      }
+
+      #cesta_fronte {
+        width:1300px;
+        height:750px;
+        background-image:url("assets/s110/cesta_fronte.png");
+        position:absolute;
+        top:0px;
+        left:0px;
+        pointer-events:none;
+      }
+
+      @font-face {
+        font-family: "Arsenal";
+        src: url(assets/fonts/Arsenal-Regular.ttf);
+      }
+
+      @font-face {
+        font-family: "Cinzel";
+        src: url(assets/fonts/Cinzel-Regular.ttf);
+      }
+
+      #variabile {
+        position:absolute;
+        top:635px;
+        left:270px;
+        color:white;
+        font-family: "Arsenal", sans-serif;
+        font-size:50px;
+        z-index:2;
+      }
+
+      #numero_fisso {
+        position:absolute;
+        top:635px;
+        left:300px;
+        color:white;
+        font-family: "Arsenal", sans-serif;
+        font-size:50px;
+        z-index:2;
+      }
+
+      #contatore {
+        position:absolute;
+        top:80px;
+        left:1150px;
+        color:white;
+        border: 3px dotted white;
+        font-family: "Arsenal", sans-serif;
+        font-size:55px;
+        width: 80px;
+        height: 100px;
+        text-align: center;
+        line-height: 177%;
+        background-color: black;
+        }
+
+      #pergamena {
+        width:353px;
+        height:550px;
+        background-image:url("assets/pergamena_giochi.png");
+        background-size:cover;
+        position:absolute;
+        top:15%;
+        left:50%;
+        transform:translate(-50%);
+      }
+
+      #testo_gioco {
+        width:75%;
+        height:70%;
+        position:absolute;
+        top:15%;
+        left:13%;
+        font-family: "Arsenal", sans-serif;
+      }
+
+      #pulsante {
+        position:absolute;
+        top:50%;
+        left:27%;
+        font-size: 50px;
+        font-family: "Cinzel", serif;
+        cursor: pointer;
+        color: #663300;
+        }
+
+        #copertina {
+          width:46px;
+          height:50px;
+          position:absolute;
+          top:80%;
+          left:13%;
+        }
+
+      .sfocato {
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -o-filter: blur(2px);
+        -ms-filter: blur(2px);
+        pointer-events:none;
+      }
+
+      #hai_vinto {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/hai_vinto.png");
+        background-size:cover;
+        display:none;
+      }
+
+      #hai_perso {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/hai_perso.png");
+        background-size:cover;
+        display:none;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="cesta_retro"></div>
+
+        <div id="talismano"></div>
+        <div id="aura_talismano" class="aura"></div>
+        <div id="alberi_talismano"></div>
+        <div id="libro"></div>
+        <div id="aura_libro" class="aura"></div>
+        <div id="alberi_libro"></div>
+        <div id="specchio"></div>
+        <div id="aura_specchio" class="aura"></div>
+        <div id="alberi_specchio"></div>
+        <div id="cappello"></div>
+        <div id="aura_cappello" class="aura"></div>
+        <div id="alberi_cappello"></div>
+        <div id="chiave"></div>
+        <div id="aura_chiave" class="aura"></div>
+        <div id="sassi_chiave"></div>
+
+        <div id="cesta_fronte"></div>
+
+        <div id="variabile">0</div>
+        <div id="numero_fisso">/5</div>
+
+        <div id="contatore">20</div>
+      </div>
+
+      <div id="pergamena">
+        <div id="testo_gioco">
+          <p>I tre fratelli, ignari di essere in realtà messi alla prova, decisero di aiutare la Morte a recuperare i cinque oggetti persi nel bosco. </p>
+        </div>
+        <div id="pulsante">Inizia</div>
+        <a href="index.html">
+          <img id="copertina" src="assets/copertina.png"/>
+        </a>
+      </div>
+
+      <div id="hai_vinto"></div>
+      <div id="hai_perso"></div>
+
+      <script>
+      $("#sfondo").addClass("sfocato")
+
+      $("#pulsante").click(function() {
+        $("#pergamena").fadeOut()
+        $("#sfondo").removeClass("sfocato")
+        timer()
+      })
+
+      $("#talismano").hover(function() {
+        $("#talismano").fadeOut()
+        $("#aura_talismano").fadeIn()
+      })
+
+      $("#libro").hover(function() {
+        $("#libro").fadeOut()
+        $("#aura_libro").fadeIn()
+      })
+
+      $("#specchio").hover(function() {
+        $("#specchio").fadeOut()
+        $("#aura_specchio").fadeIn()
+      })
+
+      $("#cappello").hover(function() {
+        $("#cappello").fadeOut()
+        $("#aura_cappello").fadeIn()
+      })
+
+      $("#chiave").hover(function() {
+        $("#chiave").fadeOut()
+        $("#aura_chiave").fadeIn()
+      })
+
+      $(".aura").draggable()
+
+      var x = 0;
+      var y = 20;
+
+      $("#cesta_retro").droppable({
+        drop: function(e, ui) {
+          ui.draggable.fadeOut(punteggio())
+        }
+      })
+
+      function punteggio() {
+        x = x + 1;
+        $("#variabile").text(x)
+        if(x == 5) {
+          window.location.href="hai_vinto_s110.html"
+        }
+      }
+
+      function timer() {
+        y = y - 1;
+        if(y > -1) {
+          $("#contatore").text(y);
+        }
+        if(y == 0) {
+          window.location.href="hai_perso.html"
+        }
+        setTimeout (timer, 1000)
+      }
+      </script>
+    </body>
+</html>

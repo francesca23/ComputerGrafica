@@ -1,0 +1,95 @@
+<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/fine.png");
+        background-size:cover;
+      }
+
+      #link {
+        background-color:white;
+        width:172px;
+        height:90px;
+        position:absolute;
+        top:600px;
+        left:550px;
+        border-radius: 20px;
+      }
+
+      #paletto {
+        background-color: white;
+        width: 4px;
+        height: 100px;
+        position: absolute;
+        left: 580px;
+        top: 650;
+        border: 1px solid white;
+      }
+
+      #paletto_2 {
+        background-color: white;
+        width: 4px;
+        height: 100px;
+        position: absolute;
+        left: 685px;
+        top: 650px;
+        border: 1px solid white;
+      }
+
+      #copertina {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:20px;
+        left:20px;
+      }
+
+      #inizio_narrazione {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:20px;
+        left:106px;
+      }
+
+      @keyframes dissolvenza {
+        from {opacity:0;}
+        to{opacity:1;}
+      }
+
+      .dissolvenza {
+        animation: dissolvenza 1s linear;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="paletto"></div>
+        <div id="paletto_2"></div>
+        <div id="link">
+          <a href="index.html">
+            <img id="copertina" src="assets/copertina.png"/>
+          </a>
+          <a href="s10.html">
+            <img id="inizio_narrazione" src="assets/inizio_narrazione.png"/>
+          </a>
+        </div>
+      </div>
+
+      <script>
+      $("#sfondo").addClass("dissolvenza")
+      </script>
+    </body>
+</html>

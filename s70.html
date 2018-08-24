@@ -1,0 +1,113 @@
+<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/s70/s70.png");
+        background-size:cover;
+      }
+
+      #pergamena {
+        width:20%;
+        height:55%;
+        position:absolute;
+        top:2.5%;
+        left:2%;
+        background-image:url("assets/pergamena.png");
+        background-size:cover;
+      }
+
+      #chiodo {
+        width:48px;
+        height:auto;
+        position:absolute;
+        top:4%;
+        left:38%;
+      }
+
+      @font-face {
+        font-family: "Arsenal";
+        src: url(assets/fonts/Arsenal-Regular.ttf);
+      }
+
+      #testo {
+        width:80%;
+        height:70%;
+        position:absolute;
+        top:15%;
+        left:50%;
+        transform:translate(-50%);
+        font-family: "Arsenal", sans-serif;
+      }
+
+      #copertina {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:80%;
+        left:11%;
+      }
+
+      #morte {
+        width:166px;
+        height:287px;
+        background-image:url("assets/s70/morte.png");
+        position:absolute;
+        top:24px;
+        left:995px;
+      }
+
+      #aura_morte {
+        width:182px;
+        height:301px;
+        background-image:url("assets/s70/aura_morte.png");
+        position:absolute;
+        top:15px;
+        left:989px;
+        display:none;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="pergamena">
+          <img id="chiodo" src="assets/chiodo.png"/>
+          <div id="testo">
+            <p>Attraversato metà ponte, i tre si trovarono il passo sbarrato da una <b>figura incappucciata</b>, che si rivelò essere la Morte.</p>
+          </div>
+          <a href="index.html">
+            <img id="copertina" src="assets/copertina.png"/>
+          </a>
+        </div>
+        <div id="morte"></div>
+        <div id="aura_morte"></div>
+      </div>
+
+      <script>
+      $("#morte").mouseenter(function() {
+        $("#morte").fadeOut()
+        $("#aura_morte").fadeIn()
+      })
+
+      $("#aura_morte").mouseleave(function() {
+        $("#aura_morte").fadeOut()
+        $("#morte").fadeIn()
+      })
+
+      $("#aura_morte").click(function() {
+        window.location.href="s80.html"
+      })
+      </script>
+    </body>
+</html>

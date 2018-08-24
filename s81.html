@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>La Storia dei Tre Fratelli</title>
+  <script src="assets/jquery.min.js"></script>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/E9E80C77-E881-D543-8386-3F442E3CC452/main.js" charset="UTF-8"></script>
+<style>
+
+#freccia {
+  width:60px;
+  height:36px;
+  background-image:url("assets/freccia.png");
+  position:absolute;
+  top:650px;
+  left:1180px;
+}
+
+#banda_sx {
+  background-color: white;
+  opacity:0.4;
+  display: inline-block;
+  position:absolute;
+  left: 0px;
+  width: 20%;
+  height: 750px;
+}
+
+@font-face {
+  font-family: "Arsenal";
+  src: url(assets/fonts/Arsenal-Regular.ttf);
+}
+
+#contatore {
+  font-family: "Arsenal", sans-serif;;
+  font-size:100px;
+  color:black;
+  display: inline-block;
+  position:absolute;
+  left: 0px;
+  width: 20%;
+  height: 200px;
+  text-align: center;
+  top: 50%;
+}
+
+#tempo {
+  font-family: "Arsenal", sans-serif;
+  font-size:70px;
+  color:black;
+  display: inline-block;
+  position:absolute;
+  left: 0px;
+  width: 20%;
+  height: 100px;
+  text-align: center;
+  top:35%
+  }
+
+
+.tavolo{
+  position: absolute;
+  height:750px;
+  width: 1300px;
+  background-image: url("assets/s81/tavolo.jpg");
+  background-size: cover;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.tessere{
+  position: absolute;
+  height:90%;
+  width: 70%;
+  right: 2%;
+  top:5%;
+}
+
+.fronte{
+  height: 80px;
+  width: 80px;
+}
+
+
+@font-face {
+  font-family: "Arsenal";
+  src: url(assets/fonts/Arsenal-Regular.ttf);
+}
+body {
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+  font-family: "Arsenal" sans-serif;
+}
+
+form {
+  position: relative;
+  width: 1300px;
+  height: 750px;
+  }
+
+output {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-family: "Arsenal" sans-serif;
+  font-size: 20px;
+  color: #7BA05B;
+  background-image: url("assets/hai_vinto.png");
+  background-size: 1300px 750px;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: none;
+  transition: none;
+}
+p {
+  margin: 0 0 1em;
+  font-family: "Arsenal" sans-serif;
+  font-size: 2em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+a {
+  margin: 0 0 1em;
+  font-family: "Arsenal" sans-serif;
+  font-size: 2em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+button {
+  margin: 0;
+  padding: 0.5em 1em 0.4em;
+  background: none;
+  border: 2px solid;
+  border-radius: 0;
+  color: #654b1a;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+form:valid {
+  overflow: hidden;
+}
+form:valid output {
+  -webkit-transition: opacity 0.2s 0.5s linear;
+  transition: opacity 0.2s 0.5s linear;
+  opacity: 1;
+  z-index: 2;
+}
+input {
+  position: absolute;
+  left: -9000px;
+}
+article {
+  width: 23%;
+  height: 23%;
+  margin: 0 1% 1% 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+  font-size: initial;
+}
+label {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+s {
+  display: block;
+  width: 90%;
+  height: 90%;
+    -webkit-animation: show-hide 1.111s linear;
+          animation: show-hide 1.111s linear;
+  -webkit-transition: -webkit-transform 0.5s 0.611s linear;
+  transition: -webkit-transform 0.5s 0.611s linear;
+  transition: transform 0.5s 0.611s linear;
+  transition: transform 0.5s 0.611s linear, -webkit-transform 0.5s 0.611s linear;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  border-radius: 8%;
+  text-decoration: none;
+}
+a,
+b {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: inherit;
+}
+a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  font-size: 65px;
+  background-size: 80px 80px;
+  background-position: center;
+}
+b {
+  display: block;
+  background-color: black;
+  background-image: url("assets/s81/tessere_memory/back-white.png");
+  background-size: 110px 90px;
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+article[id="card-0"] label[for="input-0"] {
+  z-index: 1;
+}
+input[id="input-0"]:checked ~ article[id="card-0"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-0"]:checked ~ article[id="card-0"] label {
+  display: none;
+}
+input[id="input-0"]:checked ~ input[data-match="0"]:not(:checked) ~ article:not([id="card-0"]):not([data-match="0"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-0"]:checked ~ input[data-match="0"]:not(:checked) ~ article:not([data-match="0"]) label[for="input-0"] {
+  z-index: 2;
+}
+input[data-match="0"]:not(:checked) ~ input[id="input-0"]:checked ~ article:not([id="card-0"]):not([data-match="0"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="0"]:not(:checked) ~ input[id="input-0"]:checked ~ article:not([data-match="0"]) label[for="input-0"] {
+  z-index: 2;
+}
+article[id="card-1"] label[for="input-1"] {
+  z-index: 1;
+}
+input[id="input-1"]:checked ~ article[id="card-1"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-1"]:checked ~ article[id="card-1"] label {
+  display: none;
+}
+input[id="input-1"]:checked ~ input[data-match="1"]:not(:checked) ~ article:not([id="card-1"]):not([data-match="1"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-1"]:checked ~ input[data-match="1"]:not(:checked) ~ article:not([data-match="1"]) label[for="input-1"] {
+  z-index: 2;
+}
+input[data-match="1"]:not(:checked) ~ input[id="input-1"]:checked ~ article:not([id="card-1"]):not([data-match="1"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="1"]:not(:checked) ~ input[id="input-1"]:checked ~ article:not([data-match="1"]) label[for="input-1"] {
+  z-index: 2;
+}
+article[id="card-2"] label[for="input-2"] {
+  z-index: 1;
+}
+input[id="input-2"]:checked ~ article[id="card-2"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-2"]:checked ~ article[id="card-2"] label {
+  display: none;
+}
+input[id="input-2"]:checked ~ input[data-match="2"]:not(:checked) ~ article:not([id="card-2"]):not([data-match="2"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-2"]:checked ~ input[data-match="2"]:not(:checked) ~ article:not([data-match="2"]) label[for="input-2"] {
+  z-index: 2;
+}
+input[data-match="2"]:not(:checked) ~ input[id="input-2"]:checked ~ article:not([id="card-2"]):not([data-match="2"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="2"]:not(:checked) ~ input[id="input-2"]:checked ~ article:not([data-match="2"]) label[for="input-2"] {
+  z-index: 2;
+}
+article[id="card-3"] label[for="input-3"] {
+  z-index: 1;
+}
+input[id="input-3"]:checked ~ article[id="card-3"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-3"]:checked ~ article[id="card-3"] label {
+  display: none;
+}
+input[id="input-3"]:checked ~ input[data-match="3"]:not(:checked) ~ article:not([id="card-3"]):not([data-match="3"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-3"]:checked ~ input[data-match="3"]:not(:checked) ~ article:not([data-match="3"]) label[for="input-3"] {
+  z-index: 2;
+}
+input[data-match="3"]:not(:checked) ~ input[id="input-3"]:checked ~ article:not([id="card-3"]):not([data-match="3"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="3"]:not(:checked) ~ input[id="input-3"]:checked ~ article:not([data-match="3"]) label[for="input-3"] {
+  z-index: 2;
+}
+article[id="card-4"] label[for="input-4"] {
+  z-index: 1;
+}
+input[id="input-4"]:checked ~ article[id="card-4"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-4"]:checked ~ article[id="card-4"] label {
+  display: none;
+}
+input[id="input-4"]:checked ~ input[data-match="4"]:not(:checked) ~ article:not([id="card-4"]):not([data-match="4"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-4"]:checked ~ input[data-match="4"]:not(:checked) ~ article:not([data-match="4"]) label[for="input-4"] {
+  z-index: 2;
+}
+input[data-match="4"]:not(:checked) ~ input[id="input-4"]:checked ~ article:not([id="card-4"]):not([data-match="4"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="4"]:not(:checked) ~ input[id="input-4"]:checked ~ article:not([data-match="4"]) label[for="input-4"] {
+  z-index: 2;
+}
+article[id="card-5"] label[for="input-5"] {
+  z-index: 1;
+}
+input[id="input-5"]:checked ~ article[id="card-5"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-5"]:checked ~ article[id="card-5"] label {
+  display: none;
+}
+input[id="input-5"]:checked ~ input[data-match="5"]:not(:checked) ~ article:not([id="card-5"]):not([data-match="5"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-5"]:checked ~ input[data-match="5"]:not(:checked) ~ article:not([data-match="5"]) label[for="input-5"] {
+  z-index: 2;
+}
+input[data-match="5"]:not(:checked) ~ input[id="input-5"]:checked ~ article:not([id="card-5"]):not([data-match="5"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="5"]:not(:checked) ~ input[id="input-5"]:checked ~ article:not([data-match="5"]) label[for="input-5"] {
+  z-index: 2;
+}
+article[id="card-6"] label[for="input-6"] {
+  z-index: 1;
+}
+input[id="input-6"]:checked ~ article[id="card-6"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-6"]:checked ~ article[id="card-6"] label {
+  display: none;
+}
+input[id="input-6"]:checked ~ input[data-match="6"]:not(:checked) ~ article:not([id="card-6"]):not([data-match="6"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-6"]:checked ~ input[data-match="6"]:not(:checked) ~ article:not([data-match="6"]) label[for="input-6"] {
+  z-index: 2;
+}
+input[data-match="6"]:not(:checked) ~ input[id="input-6"]:checked ~ article:not([id="card-6"]):not([data-match="6"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="6"]:not(:checked) ~ input[id="input-6"]:checked ~ article:not([data-match="6"]) label[for="input-6"] {
+  z-index: 2;
+}
+article[id="card-7"] label[for="input-7"] {
+  z-index: 1;
+}
+input[id="input-7"]:checked ~ article[id="card-7"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-7"]:checked ~ article[id="card-7"] label {
+  display: none;
+}
+input[id="input-7"]:checked ~ input[data-match="7"]:not(:checked) ~ article:not([id="card-7"]):not([data-match="7"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-7"]:checked ~ input[data-match="7"]:not(:checked) ~ article:not([data-match="7"]) label[for="input-7"] {
+  z-index: 2;
+}
+input[data-match="7"]:not(:checked) ~ input[id="input-7"]:checked ~ article:not([id="card-7"]):not([data-match="7"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="7"]:not(:checked) ~ input[id="input-7"]:checked ~ article:not([data-match="7"]) label[for="input-7"] {
+  z-index: 2;
+}
+article[id="card-8"] label[for="input-8"] {
+  z-index: 1;
+}
+input[id="input-8"]:checked ~ article[id="card-8"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-8"]:checked ~ article[id="card-8"] label {
+  display: none;
+}
+input[id="input-8"]:checked ~ input[data-match="8"]:not(:checked) ~ article:not([id="card-8"]):not([data-match="8"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-8"]:checked ~ input[data-match="8"]:not(:checked) ~ article:not([data-match="8"]) label[for="input-8"] {
+  z-index: 2;
+}
+input[data-match="8"]:not(:checked) ~ input[id="input-8"]:checked ~ article:not([id="card-8"]):not([data-match="8"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="8"]:not(:checked) ~ input[id="input-8"]:checked ~ article:not([data-match="8"]) label[for="input-8"] {
+  z-index: 2;
+}
+article[id="card-9"] label[for="input-9"] {
+  z-index: 1;
+}
+input[id="input-9"]:checked ~ article[id="card-9"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-9"]:checked ~ article[id="card-9"] label {
+  display: none;
+}
+input[id="input-9"]:checked ~ input[data-match="9"]:not(:checked) ~ article:not([id="card-9"]):not([data-match="9"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-9"]:checked ~ input[data-match="9"]:not(:checked) ~ article:not([data-match="9"]) label[for="input-9"] {
+  z-index: 2;
+}
+input[data-match="9"]:not(:checked) ~ input[id="input-9"]:checked ~ article:not([id="card-9"]):not([data-match="9"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="9"]:not(:checked) ~ input[id="input-9"]:checked ~ article:not([data-match="9"]) label[for="input-9"] {
+  z-index: 2;
+}
+article[id="card-10"] label[for="input-10"] {
+  z-index: 1;
+}
+input[id="input-10"]:checked ~ article[id="card-10"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-10"]:checked ~ article[id="card-10"] label {
+  display: none;
+}
+input[id="input-10"]:checked ~ input[data-match="10"]:not(:checked) ~ article:not([id="card-10"]):not([data-match="10"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-10"]:checked ~ input[data-match="10"]:not(:checked) ~ article:not([data-match="10"]) label[for="input-10"] {
+  z-index: 2;
+}
+input[data-match="10"]:not(:checked) ~ input[id="input-10"]:checked ~ article:not([id="card-10"]):not([data-match="10"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="10"]:not(:checked) ~ input[id="input-10"]:checked ~ article:not([data-match="10"]) label[for="input-10"] {
+  z-index: 2;
+}
+article[id="card-11"] label[for="input-11"] {
+  z-index: 1;
+}
+input[id="input-11"]:checked ~ article[id="card-11"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-11"]:checked ~ article[id="card-11"] label {
+  display: none;
+}
+input[id="input-11"]:checked ~ input[data-match="11"]:not(:checked) ~ article:not([id="card-11"]):not([data-match="11"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-11"]:checked ~ input[data-match="11"]:not(:checked) ~ article:not([data-match="11"]) label[for="input-11"] {
+  z-index: 2;
+}
+input[data-match="11"]:not(:checked) ~ input[id="input-11"]:checked ~ article:not([id="card-11"]):not([data-match="11"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="11"]:not(:checked) ~ input[id="input-11"]:checked ~ article:not([data-match="11"]) label[for="input-11"] {
+  z-index: 2;
+}
+article[id="card-12"] label[for="input-12"] {
+  z-index: 1;
+}
+input[id="input-12"]:checked ~ article[id="card-12"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-12"]:checked ~ article[id="card-12"] label {
+  display: none;
+}
+input[id="input-12"]:checked ~ input[data-match="12"]:not(:checked) ~ article:not([id="card-12"]):not([data-match="12"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-12"]:checked ~ input[data-match="12"]:not(:checked) ~ article:not([data-match="12"]) label[for="input-12"] {
+  z-index: 2;
+}
+input[data-match="12"]:not(:checked) ~ input[id="input-12"]:checked ~ article:not([id="card-12"]):not([data-match="12"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="12"]:not(:checked) ~ input[id="input-12"]:checked ~ article:not([data-match="12"]) label[for="input-12"] {
+  z-index: 2;
+}
+article[id="card-13"] label[for="input-13"] {
+  z-index: 1;
+}
+input[id="input-13"]:checked ~ article[id="card-13"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-13"]:checked ~ article[id="card-13"] label {
+  display: none;
+}
+input[id="input-13"]:checked ~ input[data-match="13"]:not(:checked) ~ article:not([id="card-13"]):not([data-match="13"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-13"]:checked ~ input[data-match="13"]:not(:checked) ~ article:not([data-match="13"]) label[for="input-13"] {
+  z-index: 2;
+}
+input[data-match="13"]:not(:checked) ~ input[id="input-13"]:checked ~ article:not([id="card-13"]):not([data-match="13"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="13"]:not(:checked) ~ input[id="input-13"]:checked ~ article:not([data-match="13"]) label[for="input-13"] {
+  z-index: 2;
+}
+article[id="card-14"] label[for="input-14"] {
+  z-index: 1;
+}
+input[id="input-14"]:checked ~ article[id="card-14"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-14"]:checked ~ article[id="card-14"] label {
+  display: none;
+}
+input[id="input-14"]:checked ~ input[data-match="14"]:not(:checked) ~ article:not([id="card-14"]):not([data-match="14"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-14"]:checked ~ input[data-match="14"]:not(:checked) ~ article:not([data-match="14"]) label[for="input-14"] {
+  z-index: 2;
+}
+input[data-match="14"]:not(:checked) ~ input[id="input-14"]:checked ~ article:not([id="card-14"]):not([data-match="14"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="14"]:not(:checked) ~ input[id="input-14"]:checked ~ article:not([data-match="14"]) label[for="input-14"] {
+  z-index: 2;
+}
+article[id="card-15"] label[for="input-15"] {
+  z-index: 1;
+}
+input[id="input-15"]:checked ~ article[id="card-15"] s {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+input[id="input-15"]:checked ~ article[id="card-15"] label {
+  display: none;
+}
+input[id="input-15"]:checked ~ input[data-match="15"]:not(:checked) ~ article:not([id="card-15"]):not([data-match="15"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[id="input-15"]:checked ~ input[data-match="15"]:not(:checked) ~ article:not([data-match="15"]) label[for="input-15"] {
+  z-index: 2;
+}
+input[data-match="15"]:not(:checked) ~ input[id="input-15"]:checked ~ article:not([id="card-15"]):not([data-match="15"]) label:active ~ s {
+  -webkit-animation: none;
+          animation: none;
+}
+input[data-match="15"]:not(:checked) ~ input[id="input-15"]:checked ~ article:not([data-match="15"]) label[for="input-15"] {
+  z-index: 2;
+}
+@-webkit-keyframes show-hide {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  45%, 55% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+@keyframes show-hide {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  45%, 55% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+  <!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+    <title>La Storia dei Tre Fratelli</title>
+    <meta name="description" content="Match cards memory game">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+      <form>
+      <output>
+        <div id="freccia"></div>
+      </output>
+
+
+        <div id="#tavolo" class="tavolo">
+        <div id="banda_sx"></div>
+          <div id="tempo">Tempo</div>
+        <div id="contatore">60</div>
+        <div class="tessere">
+      <input type="checkbox" id="input-0" data-match="6" required>
+      <input type="checkbox" id="input-1" data-match="2" required>
+      <input type="checkbox" id="input-2" data-match="1" required>
+      <input type="checkbox" id="input-3" data-match="12" required>
+      <input type="checkbox" id="input-4" data-match="15" required>
+      <input type="checkbox" id="input-5" data-match="9" required>
+      <input type="checkbox" id="input-6" data-match="0" required>
+      <input type="checkbox" id="input-7" data-match="8" required>
+      <input type="checkbox" id="input-8" data-match="7" required>
+      <input type="checkbox" id="input-9" data-match="5" required>
+      <input type="checkbox" id="input-10" data-match="11" required>
+      <input type="checkbox" id="input-11" data-match="10" required>
+      <input type="checkbox" id="input-12" data-match="3" required>
+      <input type="checkbox" id="input-13" data-match="14" required>
+      <input type="checkbox" id="input-14" data-match="13" required>
+      <input type="checkbox" id="input-15" data-match="4" required>
+      <article id="card-0" data-match="6">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/funghi.png" class="fronte"></img></a>
+        </s>
+      </article>
+      <article id="card-1" data-match="2">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/fratello2.png" class="fronte"></img></a>
+        </s>
+      </article>
+      <article id="card-3" data-match="12">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/pietra.png"  class="fronte"></img></a>
+        </s>
+      </article>
+      <article id="card-2" data-match="1">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/fratello2.png" class="fronte"></img></a>
+        </s>
+      </article>
+
+      <article id="card-4" data-match="15">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/fratello1.png" class="fronte"></img></a>
+        </s>
+      </article>
+      <article id="card-5" data-match="9">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/mantello.png" class="fronte"></img></a>
+        </s>
+      </article>
+      <article id="card-7" data-match="8">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/morte.png" class="fronte"></img></a>
+        </s>
+      </article>
+      <article id="card-10" data-match="11">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/bacchetta.png" class="fronte"></img></a>
+        </s>
+      </article>
+      <article id="card-11" data-match="10">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/bacchetta.png" class="fronte"></img></a>
+        </s>
+      </article>
+      <article id="card-13" data-match="14">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/fratello3.png" class="fronte"></img></a>
+        </s>
+      </article>
+      <article id="card-6" data-match="0">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/funghi.png" class="fronte"></img></a>
+        </s>
+      </article>
+      <article id="card-9" data-match="5">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/mantello.png" class="fronte"></img></a>
+        </s>
+      </article>
+
+      <article id="card-8" data-match="7">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/morte.png" class="fronte"></img></a>
+        </s>
+      </article>
+
+      <article id="card-12" data-match="3">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/pietra.png"  class="fronte"></img></a>
+        </s>
+      </article>
+
+      <article id="card-14" data-match="13">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/fratello3.png" class="fronte"></img></a>
+        </s>
+      </article>
+      <article id="card-15" data-match="4">
+        <label for="input-0"></label>
+        <label for="input-1"></label>
+        <label for="input-2"></label>
+        <label for="input-3"></label>
+        <label for="input-4"></label>
+        <label for="input-5"></label>
+        <label for="input-6"></label>
+        <label for="input-7"></label>
+        <label for="input-8"></label>
+        <label for="input-9"></label>
+        <label for="input-10"></label>
+        <label for="input-11"></label>
+        <label for="input-12"></label>
+        <label for="input-13"></label>
+        <label for="input-14"></label>
+        <label for="input-15"></label>
+        <s>
+          <b></b>
+          <a><img src="assets/s81/tessere_memory/fratello1.png" class="fronte"></img></a>
+        </s>
+      </article>
+    </div>
+    </div>
+    <script>
+    var y = 60;
+    function timer() {
+      y = y - 1;
+      if(y > -1) {
+        $("#contatore").text(y);
+      }
+      if(y == 0) {
+        window.location.href="hai_perso.html"
+      }
+    }
+    setInterval (timer, 1000)
+
+    $("#freccia").click(function() {
+      window.location.href="s90.html"
+    })
+    </script>
+    </form>
+  </body>
+</html>

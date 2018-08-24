@@ -1,0 +1,103 @@
+<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/s41/s41.png");
+        background-size:cover;
+      }
+
+      #pergamena {
+        width:20%;
+        height:55%;
+        position:absolute;
+        top:2.5%;
+        left:2%;
+        background-image:url("assets/pergamena.png");
+        background-size:cover;
+      }
+
+      #chiodo {
+        width:48px;
+        height:auto;
+        position:absolute;
+        top:4%;
+        left:38%;
+      }
+
+      @font-face {
+        font-family: "Arsenal";
+        src: url(assets/fonts/Arsenal-Regular.ttf);
+      }
+
+      #testo {
+        width:80%;
+        height:70%;
+        position:absolute;
+        top:15%;
+        left:50%;
+        transform:translate(-50%);
+        font-family: "Arsenal", sans-serif;
+      }
+
+      #copertina {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:80%;
+        left:11%;
+      }
+
+      #freccia {
+        width:60px;
+        height:36px;
+        background-image:url("assets/freccia.png");
+        position:absolute;
+        top:650px;
+        left:1180px;
+      }
+
+      @keyframes dissolvenza {
+        from {opacity:0;}
+        to{opacity:1;}
+      }
+
+      .dissolvenza {
+        animation: dissolvenza 1s linear;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="pergamena">
+          <img id="chiodo" src="assets/chiodo.png"/>
+          <div id="testo">
+            <p>Nonostante i sassi sembrassero stabili e sicuri, dopo esserci saltati sopra, questi sprofondarono a causa del fondale fangoso e i tre fratelli affogarono.</p>
+          </div>
+          <a href="index.html">
+            <img id="copertina" src="assets/copertina.png"/>
+          </a>
+        </div>
+        <div id="freccia"></div>
+      </div>
+
+      <script>
+      $("#sfondo").addClass("dissolvenza")
+
+      $("#freccia").click(function() {
+        window.location.href="hai_perso.html"
+      })
+      </script>
+    </body>
+</html>

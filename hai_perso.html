@@ -1,0 +1,93 @@
+<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/hai_perso.png");
+        background-size:cover;
+      }
+
+      #link {
+        background-color:white;
+        width:172px;
+        height:90px;
+        position:absolute;
+        top:100px;
+        left:580px;
+        border-radius: 20px;
+      }
+
+      #corda {
+        background-color: white;
+        width: 4px;
+        height: 100px;
+        position: absolute;
+        left: 613px;
+        border: 1px solid white;
+      }
+
+      #corda_2 {
+        background-color: white;
+        width: 4px;
+        height: 100px;
+        position: absolute;
+        left: 710px;
+        border: 1px solid white;
+      }
+
+      #copertina {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:20px;
+        left:23px;
+      }
+
+      #inizio_narrazione {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:20px;
+        left:106px;
+      }
+
+      @keyframes dissolvenza {
+        from {opacity:0;}
+        to{opacity:1;}
+      }
+
+      .dissolvenza {
+        animation: dissolvenza 1s linear;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="corda"></div>
+        <div id="corda_2"></div>
+        <div id="link">
+          <a href="index.html">
+            <img id="copertina" src="assets/copertina.png"/>
+          </a>
+          <a href="s10.html">
+            <img id="inizio_narrazione" src="assets/inizio_narrazione.png"/>
+          </a>
+        </div>
+      </div>
+
+      <script>
+      $("#sfondo").addClass("dissolvenza")
+      </script>
+    </body>
+</html>

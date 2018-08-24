@@ -1,0 +1,121 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/sfondo_index.png");
+        background-size:cover;
+      }
+
+      #copertina {
+        width:41px;
+        height:45px;
+        position:absolute;
+        top:50px;
+        left:200px;
+      }
+
+      @font-face {
+        font-family: "Arsenal";
+        src: url(assets/fonts/Arsenal-Regular.ttf);
+      }
+
+      #progetto {
+        position:absolute;
+        top:150px;
+        left:100px;
+        font-family: "Arsenal", sans-serif;
+        font-size:20px;
+        text-align:left;
+        font-weight:bold;
+      }
+
+      a:link {
+        color:black;
+        font-family: "Arsenal", sans-serif;
+        font-size:20px;
+        text-align:left;
+        font-weight:bold;
+      }
+      a:visited {
+        color:black;
+      }
+
+      #inizio_img {
+        width:38px;
+        height:40px;
+        position:absolute;
+        top:152px;
+        left:900px;
+      }
+
+      #inizio {
+        position:absolute;
+        top:160px;
+        left:950px;
+      }
+
+      #crediti_img {
+        width:25px;
+        height:34px;
+        position:absolute;
+        top:202px;
+        left:907px;
+      }
+
+      #crediti {
+        position:absolute;
+        top:208px;
+        left:950px;
+      }
+
+      #autori_img {
+        width:25px;
+        height:34px;
+        position:absolute;
+        top:247px;
+        left:908px;
+      }
+
+      #autori {
+        position:absolute;
+        top:252px;
+        left:953px;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <img id="copertina" src="assets/copertina.png"/>
+        <div id="progetto">
+          Politecnico di Milano, Scuola del Design<br/>
+          Corso di Laurea in Design della Comunicazione<br/>
+          Laboratorio di Computer Grafica, sezione C3<br/>
+          Proff. M. Bertolo, F. Bruschi, V. Rana, M. Russo<br/>
+          A.A. 2016/2017<br/>
+        </div>
+        <a href="s10.html">
+          <img id="inizio_img" src="assets/inizio_narrazione.png"/>
+          <div id="inizio">C'era una volta</div>
+        </a>
+        <a href="crediti.html">
+          <img id="crediti_img" src="assets/crediti.png"/>
+          <div id="crediti">Crediti</div>
+        </a>
+        <a href="autori.html">
+          <img id="autori_img" src="assets/autori.png"/>
+          <div id="autori">Autori</div>
+        </a>
+      </div>
+    </body>
+</html>

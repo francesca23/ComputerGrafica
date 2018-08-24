@@ -1,0 +1,123 @@
+﻿<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/s30/s30.png");
+        background-size:cover;
+      }
+
+      #pergamena {
+        width:20%;
+        height:55%;
+        position:absolute;
+        top:2.5%;
+        left:2%;
+        background-image:url("assets/pergamena.png");
+        background-size:cover;
+      }
+
+      #chiodo {
+        width:48px;
+        height:auto;
+        position:absolute;
+        top:4%;
+        left:38%;
+      }
+
+      @font-face {
+        font-family: "Arsenal";
+        src: url(assets/fonts/Arsenal-Regular.ttf);
+      }
+
+      #testo {
+        width:80%;
+        height:70%;
+        position:absolute;
+        top:15%;
+        left:50%;
+        transform:translate(-50%);
+        font-family: "Arsenal", sans-serif;
+      }
+
+      #copertina {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:80%;
+        left:11%;
+      }
+
+      #barca {
+        width:304px;
+        height:177px;
+        background-image:url("assets/s30/barca.png");
+        position:absolute;
+        top:319px;
+        left:552px;
+      }
+
+      #aura_barca {
+        width:320px;
+        height:191px;
+        background-image:url("assets/s30/aura_barca.png");
+        position:absolute;
+        top:312px;
+        left:544px;
+        display:none;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="pergamena">
+          <img id="chiodo" src="assets/chiodo.png"/>
+          <div id="testo">
+            <p>Giunti presso un'insenatura del fiume, dove l'acqua era più calma, trovarono una <b>barca</b> abbandonata e un po’ malconcia.
+              I fratelli, pur non avendo la certezza di riuscire a raggiungere l’altra sponda, decisero comunque di tentare la sorte.</p>
+          </div>
+          <a href="index.html">
+            <img id="copertina" src="assets/copertina.png"/>
+          </a>
+        </div>
+        <div id="barca"></div>
+        <div id="aura_barca"></div>
+      </div>
+
+      <script>
+      $("#barca").mouseenter(function() {
+        $("#barca").fadeOut()
+        $("#aura_barca").fadeIn()
+      })
+
+      $("#aura_barca").mouseleave(function() {
+        $("#aura_barca").fadeOut()
+        $("#barca").fadeIn()
+      })
+
+      $("#aura_barca").click(function(value) {
+        value = Math.ceil(Math.random()*6)
+        alert(value +"\nSe il numero è pari la barca è in buone condizioni.\nSe il numero è dispari la barca è bucata.")
+
+        if(value%2==0) {
+          window.location.href="s71.html"
+        } //pari
+
+        else {
+          window.location.href="s61.html"
+        } //dispari
+      })
+      </script>
+    </body>
+</html>

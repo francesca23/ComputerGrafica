@@ -1,0 +1,343 @@
+﻿<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/s90/s90.png");
+        background-size:cover;
+      }
+
+      #pergamena {
+        width:321px;
+        height:500px;
+        position:absolute;
+        top:2.5%;
+        left:2%;
+        background-image:url("assets/pergamena.png");
+        background-size:cover;
+      }
+
+      #chiodo {
+        width:48px;
+        height:auto;
+        position:absolute;
+        top:4%;
+        left:38%;
+      }
+
+      @font-face {
+        font-family: "Arsenal";
+        src: url(assets/fonts/Arsenal-Regular.ttf);
+      }
+
+      #testo {
+        width:80%;
+        height:70%;
+        position:absolute;
+        top:14%;
+        left:50%;
+        transform:translate(-50%);
+        font-family: "Arsenal", sans-serif;
+      }
+
+      #copertina {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:81%;
+        left:11%;
+      }
+
+      #bacchetta {
+        width:258px;
+        height:366px;
+        background-image:url("assets/s90/bacchetta.png");
+        position:absolute;
+        top:203px;
+        left:433px;
+      }
+
+      #aura_bacchetta {
+        width:273px;
+        height:377px;
+        background-image:url("assets/s90/aura_bacchetta.png");
+        position:absolute;
+        top:197px;
+        left:426px;
+        display:none;
+      }
+
+      #pietra {
+        width:96px;
+        height:128px;
+        background-image:url("assets/s90/pietra.png");
+        position:absolute;
+        top:392px;
+        left:768px;
+      }
+
+      #aura_pietra {
+        width:119px;
+        height:145px;
+        background-image:url("assets/s90/aura_pietra.png");
+        position:absolute;
+        top:383px;
+        left:759px;
+        display:none;
+      }
+
+      #mantello {
+        width:375px;
+        height:561px;
+        background-image:url("assets/s90/mantello.png");
+        position:absolute;
+        top:155px;
+        left:925px;
+      }
+
+      #aura_mantello {
+        width:383px;
+        height:579px;
+        background-image:url("assets/s90/aura_mantello.png");
+        position:absolute;
+        top:145px;
+        left:916px;
+        display:none;
+      }
+
+      #fratello1 {
+        width:929px;
+        height:536px;
+        background-image:url("assets/s90/fratello1.png");
+        background-size:cover;
+        position:absolute;
+        top:15%;
+        left:50%;
+        transform:translate(-50%);
+        box-shadow: 0px 0px 50px 10px rgba(255,255,255,0.75);
+        display:none;
+      }
+
+      #fratello2 {
+        width:929px;
+        height:536px;
+        background-image:url("assets/s90/fratello2.png");
+        background-size:cover;
+        position:absolute;
+        top:15%;
+        left:50%;
+        transform:translate(-50%);
+        box-shadow: 0px 0px 50px 10px rgba(255,255,255,0.75);
+        display:none;
+      }
+
+      #fratello3 {
+        width:929px;
+        height:536px;
+        background-image:url("assets/s90/fratello3.png");
+        background-size:cover;
+        position:absolute;
+        top:15%;
+        left:50%;
+        transform:translate(-50%);
+        box-shadow: 0px 0px 50px 10px rgba(255,255,255,0.75);
+        display:none;
+      }
+
+      #pergamena_fratelli {
+        width:28%;
+        height:77%;
+        position:absolute;
+        top:2.5%;
+        left:2%;
+        background-image:url("assets/pergamena.png");
+        background-size:cover;
+      }
+
+      #chiodo_fratelli {
+        width:40px;
+        height:auto;
+        position:absolute;
+        top:4%;
+        left:35%;
+      }
+
+      @font-face {
+        font-family: "Arsenal";
+        src: url(assets/fonts/Arsenal-Regular.ttf);
+      }
+
+      #testo_fratelli {
+        width:80%;
+        height:70%;
+        position:absolute;
+        top:14%;
+        left:50%;
+        transform:translate(-50%);
+        font-family: "Arsenal", sans-serif;
+      }
+
+      #freccia {
+        width:60px;
+        height:36px;
+        background-image:url("assets/freccia.png");
+        position:absolute;
+        top:650px;
+        left:50px;
+      }
+
+      .x {
+        width:20px;
+        height:20px;
+        background-image:url("assets/s90/x.png");
+        background-size:cover;
+        position:absolute;
+        top:5%;
+        left:95%;
+      }
+
+      .sfocato {
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -o-filter: blur(2px);
+        -ms-filter: blur(2px);
+        pointer-events:none;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="pergamena">
+          <img id="chiodo" src="assets/chiodo.png"/>
+          <div id="testo">
+            <p>La Morte per congratularsi con i tre fratelli, che erano stati tanto abili da sfuggirle, decise di offrire un dono a ciascuno di loro.
+              Il fratello maggiore, uomo bellicoso, chiese una <b>bacchetta</b> più potente di qualunque altra al mondo.
+              Il secondo, uomo arrogante, chiese una <b>pietra</b> con il potere di richiamare in vita i morti.
+              Il più giovane, umile e saggio, non fidandosi della Morte, chiese qualcosa che gli permettesse di andarsene
+              senza essere seguito da lei e la Morte, con riluttanza, gli consegnò il proprio <b>mantello</b> dell’invisibilità.</p>
+          </div>
+          <a href="index.html">
+            <img id="copertina" src="assets/copertina.png"/>
+          </a>
+        </div>
+        <div id="bacchetta"></div>
+        <div id="aura_bacchetta"></div>
+        <div id="pietra"></div>
+        <div id="aura_pietra"></div>
+        <div id="mantello"></div>
+        <div id="aura_mantello"></div>
+        <div id="freccia"></div>
+      </div>
+      <div id="fratello1">
+        <div id="pergamena_fratelli">
+          <img id="chiodo_fratelli" src="assets/chiodo.png"/>
+          <div id="testo_fratelli">
+            <p>Il primo fratello decise di sfruttare il potere della bacchetta per chiudere i conti in sospeso con il proprio nemico e non poté mancare di vincere il duello,
+              vantandosi della sua potente arma. Quella stessa notte, un altro mago si avvicinò a lui mentre dormiva, gli tagliò la gola e rubò la bacchetta.
+              Fu così che la Morte chiamò a sé il primo fratello.</p>
+          </div>
+        </div>
+        <div id="x1" class="x"></div>
+      </div>
+      <div id="fratello2">
+        <div id="pergamena_fratelli">
+          <img id="chiodo_fratelli" src="assets/chiodo.png"/>
+          <div id="testo_fratelli">
+            <p>Il secondo fratello, usando il potere della pietra, riportò in vita la fanciulla che aveva sperato di sposare prima che lei morisse.
+              Pur essendo tornata nel mondo dei mortali, non ne faceva veramente parte e soffriva, era triste e fredda, separata da lui come da un velo.
+              L'uomo, reso folle dal suo disperato desiderio, si tolse la vita per potersi davvero riunire a lei.
+              Fu così che la Morte chiamò a sé anche il secondo fratello.</p>
+          </div>
+        </div>
+        <div id="x2" class="x"></div>
+      </div>
+      <div id="fratello3">
+        <div id="pergamena_fratelli">
+          <img id="chiodo_fratelli" src="assets/chiodo.png"/>
+          <div id="testo_fratelli">
+            <p>La Morte cercò il terzo fratello per molti anni, ma non riuscì mai a trovarlo.
+              Fu solo quando ebbe raggiunto una veneranda età che il fratello più giovane si tolse il mantello dell'invisibilità e lo regalò al figlio.
+              Dopodiché salutò la Morte come una vecchia amica e andò lieto con lei, da pari a pari, congedandosi da questa vita.</p>
+          </div>
+        </div>
+        <div id="x3" class="x"></div>
+      </div>
+
+      <script>
+      $("#bacchetta").mouseenter(function() {
+        $("#bacchetta").fadeOut()
+        $("#aura_bacchetta").fadeIn()
+      })
+
+      $("#aura_bacchetta").mouseleave(function() {
+        $("#aura_bacchetta").fadeOut()
+        $("#bacchetta").fadeIn()
+      })
+
+      $("#pietra").mouseenter(function() {
+        $("#pietra").fadeOut()
+        $("#aura_pietra").fadeIn()
+      })
+
+      $("#aura_pietra").mouseleave(function() {
+        $("#aura_pietra").fadeOut()
+        $("#pietra").fadeIn()
+      })
+
+      $("#mantello").mouseenter(function() {
+        $("#mantello").fadeOut()
+        $("#aura_mantello").fadeIn()
+      })
+
+      $("#aura_mantello").mouseleave(function() {
+        $("#aura_mantello").fadeOut()
+        $("#mantello").fadeIn()
+      })
+
+      $("#aura_bacchetta").click(function() {
+        $("#fratello1").fadeIn()
+        $("#sfondo").addClass("sfocato")
+      })
+
+      $("#x1").click(function() {
+        $("#fratello1").fadeOut()
+        $("#sfondo").removeClass("sfocato")
+      })
+
+      $("#aura_pietra").click(function() {
+        $("#fratello2").fadeIn()
+        $("#sfondo").addClass("sfocato")
+      })
+
+      $("#x2").click(function() {
+        $("#fratello2").fadeOut()
+        $("#sfondo").removeClass("sfocato")
+      })
+
+      $("#aura_mantello").click(function() {
+        $("#fratello3").fadeIn()
+        $("#sfondo").addClass("sfocato")
+      })
+
+      $("#x3").click(function() {
+        $("#fratello3").fadeOut()
+        $("#sfondo").removeClass("sfocato")
+      })
+
+      $("#freccia").click(function() {
+        window.location.href="fine.html"
+      })
+      </script>
+    </body>
+</html>

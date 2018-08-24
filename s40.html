@@ -1,0 +1,231 @@
+<html>
+    <head>
+      <script src="assets/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <title>La Storia dei Tre Fratelli</title>
+      <style>
+      body {
+        background-color:black;
+      }
+
+      #sfondo {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/s40/s40.png");
+        background-size:cover;
+      }
+
+      #pergamena {
+        width:20%;
+        height:55%;
+        position:absolute;
+        top:2.5%;
+        left:2%;
+        background-image:url("assets/pergamena.png");
+        background-size:cover;
+      }
+
+      #chiodo {
+        width:48px;
+        height:auto;
+        position:absolute;
+        top:4%;
+        left:38%;
+      }
+
+      @font-face {
+        font-family: "Arsenal";
+        src: url(assets/fonts/Arsenal-Regular.ttf);
+      }
+
+      #testo {
+        width:80%;
+        height:70%;
+        position:absolute;
+        top:15%;
+        left:50%;
+        transform:translate(-50%);
+        font-family: "Arsenal", sans-serif;
+      }
+
+      #copertina {
+        width:46px;
+        height:50px;
+        position:absolute;
+        top:80%;
+        left:11%;
+      }
+
+      #sasso1 {
+        width:180px;
+        height:109px;
+        background-image:url("assets/s40/sasso1.png");
+        background-size:cover;
+        position:absolute;
+        top:505px;
+        left:703px;
+      }
+
+      #aura_sasso1 {
+        width:190px;
+        height:122px;
+        background-image:url("assets/s40/aura_sasso1.png");
+        background-size:cover;
+        position:absolute;
+        top:499px;
+        left:698px;
+        display:none;
+      }
+
+      #sasso2 {
+        width:139px;
+        height:66px;
+        background-image:url("assets/s40/sasso2.png");
+        background-size:cover;
+        position:absolute;
+        top:431px;
+        left:555px;
+      }
+
+      #aura_sasso2 {
+        width:150px;
+        height:77px;
+        background-image:url("assets/s40/aura_sasso2.png");
+        background-size:cover;
+        position:absolute;
+        top:426px;
+        left:550px;
+        display:none;
+      }
+
+      #sasso3 {
+        width:112px;
+        height:53px;
+        background-image:url("assets/s40/sasso3.png");
+        background-size:cover;
+        position:absolute;
+        top:365px;
+        left:739px;
+      }
+
+      #aura_sasso3 {
+        width:121px;
+        height:65px;
+        background-image:url("assets/s40/aura_sasso3.png");
+        background-size:cover;
+        position:absolute;
+        top:359px;
+        left:735px;
+        display:none;
+      }
+
+      #sasso4 {
+        width:92px;
+        height:42px;
+        background-image:url("assets/s40/sasso4.png");
+        background-size:cover;
+        position:absolute;
+        top:332px;
+        left:595px;
+      }
+
+      #aura_sasso4 {
+        width:101px;
+        height:51px;
+        background-image:url("assets/s40/aura_sasso4.png");
+        background-size:cover;
+        position:absolute;
+        top:327px;
+        left:590px;
+        display:none;
+      }
+
+      #sfondo_senza_sassi {
+        width:1300px;
+        height:750px;
+        position:absolute;
+        left:50%;
+        transform:translate(-50%);
+        background-image:url("assets/s40/s40_senza_sassi.png");
+        background-size:cover;
+        display:none;
+      }
+
+      .selected {
+        cursor: url("assets/s40/omino_sassi.png") 30 100, pointer;
+      }
+
+      @keyframes dissolvenza {
+        from {opacity:1;}
+        to{opacity:0;}
+      }
+
+      .dissolvenza {
+        animation: dissolvenza 1s linear;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="sfondo">
+        <div id="pergamena">
+          <img id="chiodo" src="assets/chiodo.png"/>
+          <div id="testo">
+            <p>I tre pensarono di saltare su alcuni <b>sassi</b> che affioravano dall'acqua, così da poter raggiungere l’altra sponda del fiume.</p>
+          </div>
+          <a href="index.html">
+            <img id="copertina" src="assets/copertina.png"/>
+          </a>
+        </div>
+        <div id="sasso1" class="sasso"></div>
+        <div id="aura_sasso1" class="sasso"></div>
+        <div id="sasso2" class="sasso"></div>
+        <div id="aura_sasso2" class="sasso"></div>
+        <div id="sasso3" class="sasso"></div>
+        <div id="aura_sasso3" class="sasso"></div>
+        <div id="sasso4"></div>
+        <div id="aura_sasso4"></div>
+      </div>
+
+      <script>
+
+      $("#sasso1").hover(function() {
+        $("#sasso1").fadeOut()
+        $("#aura_sasso1").fadeIn()
+        $("#aura_sasso1").addClass("selected")
+      })
+
+      $("#aura_sasso1").click(function() {
+        $("#sasso2").fadeOut()
+        $("#aura_sasso2").fadeIn()
+        $("#aura_sasso2").addClass("selected")
+        $("#aura_sasso1").fadeOut()
+      })
+
+      $("#aura_sasso2").click(function() {
+        $("#sasso3").fadeOut()
+        $("#aura_sasso3").fadeIn()
+        $("#aura_sasso3").addClass("selected")
+        $("#aura_sasso2").fadeOut()
+        $("#sasso2").fadeIn()
+      })
+
+      $("#aura_sasso3").click(function() {
+        $("#sasso4").fadeOut()
+        $("#aura_sasso4").fadeIn()
+        $("#aura_sasso4").addClass("selected")
+        $("#aura_sasso3").fadeOut()
+        $("#sasso3").fadeIn()
+      })
+
+      $("#aura_sasso4").click(function() {
+        $(".sasso").addClass("dissolvenza")
+        $("#aura_sasso4").removeClass("selected")
+        $("#aura_sasso4").addClass("dissolvenza")
+        window.location.href = "s41.html"
+      })
+      </script>
+    </body>
+</html>
